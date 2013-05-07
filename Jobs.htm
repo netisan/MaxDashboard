@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Max Analytics Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="resource/bootstrap.css" rel="stylesheet">
+    <link href="resource/bootstrap-responsive.css" rel="stylesheet">
+   
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="resource/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resource/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resource/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resource/apple-touch-icon-72-precomposed.png">
+	<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="Jobs.htm"><span class="color-highlight">M</span>ax Analytics Admin 1.0</a>
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+            	<li><a href="Chart.htm">Chart</a></li>
+              <li><a href="JobDescriptions.htm">Job Descriptions</a></li>
+              <li class="active"><a href="Jobs.htm">Jobs</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+	<div class="container">
+	
+    <div class="row">
+		<div class="span12">
+        <!-- knockout data bind -->
+        	<table cellspacing="0">
+                <thead>
+                    <th>Name</th>
+                    <th class="optional3">Job Flow ID</th>
+                    <th>State</th>
+                    <th class="optional1">State Detail</th>
+                    <th class="optional2">Duration</th>
+                    <th>Operations</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Job Name (IntergrationTest)</td>
+                    <td class="optional3">J-37c8k1k04xd8u</td>
+                    <td>Terminated</td>
+                    <td class="optional1">Terminated by user request</td>
+                    <td class="optional2">4 minutes</td>
+                    <td><button class="btn kill">Kill</button></td>
+                </tr>
+                <tr>
+                    <td>Mock.Job</td>
+                    <td class="optional3">J-37c8k1k04xd8u</td>
+                    <td>Completed</td>
+                    <td class="optional1">Steps Completed</td>
+                    <td class="optional2">14 minutes</td>
+                    <td><button class="btn kill">Kill</button></td>
+                </tr>  
+                <tr>
+                    <td>Job Name (IntergrationTest)</td>
+                    <td class="optional3">J-37c8k1k04xd8u</td>
+                    <td>Terminated</td>
+                    <td class="optional1">Terminated by user request</td>
+                    <td class="optional2">4 minutes</td>
+                    <td><button class="btn kill">Kill</button></td>
+                </tr>
+                <tr>
+                    <td>Mock.Job</td>
+                    <td class="optional3">J-37c8k1k04xd8u</td>
+                    <td>Completed</td>
+                    <td class="optional1">Steps Completed</td>
+                    <td class="optional2">14 minutes</td>
+                    <td><button class="btn kill">Kill</button></td>
+                </tr>         
+                </tbody>
+             </table>
+             <!--/ knockout data bind -->
+  		</div>
+    </div>
+
+      <hr>
+		<footer class="row">
+			<p>
+			Design by <a href="#">Yours Truly</a>
+			</p>
+		</footer>
+    </div><!-- /container -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="resource/jquery.js"></script>
+    <script src="resource/bootstrap-collapse.js"></script> <!-- mobile nav -->
+
+  </body>
+</html>

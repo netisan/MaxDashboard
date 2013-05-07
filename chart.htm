@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Max Analytics Admin 1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="resource/bootstrap.css" rel="stylesheet">
+    <link href="resource/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" type="text/css" media="all" />
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="resource/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+        #canvasOption 
+        {
+           width: 580px; margin: 0 auto; vertical-align: top; font-size: 1em; overflow: hidden;
+        }
+       
+        .flowchart {
+            position: relative;
+            text-align: center;
+            width: 1160px;
+            height: 605px;
+            background: white url(resource/img/flowchart.png) no-repeat top left;
+            margin: 10px auto;
+            overflow: hidden;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-box-shadow: 3px 3px 6px #888;
+            -webkit-box-shadow: 3px 3px 6px #888;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            color: black;
+            font-weight: bold;
+            padding: 0;
+            overflow: hidden;
+            text-align: center;
+            vertical-align: text-top;
+        }
+
+        #interval {
+            position: relative;
+            bottom: 10px;
+            width: 300px;
+            color: black;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+
+        #interval-slider {
+            width: 100%;
+        }
+
+        .slider-needle {
+            float: left;
+            width: 33px;
+            text-align: left;
+        }
+
+            .slider-needle.last {
+                float: left;
+                width: 1px;
+                text-align: left;
+            }
+
+        select {
+            font-size: 1em;
+            padding: 0px;
+        }
+        #tooltip 
+        {
+            position: absolute;
+            width: auto;
+            z-index: 100;
+            padding:2px 4px;
+            font-weight: bold;
+            border: solid 2px #999;
+            background: #fff;
+            opacity: 0.85;
+	        filter: alpha(opacity=85); /* For IE8 and earlier */
+            display:none;
+            box-shadow: 2px 2px 6px #888;
+        }
+        #bar-x {
+            position: absolute;
+            top:0px;
+            left:0px;
+            z-index:98;
+            width:2px;
+            height: 100%;
+            background: #999;
+            box-shadow: 2px 2px 6px #888;
+        }
+        #bar-y {
+            position: absolute;
+            top:0px;
+            left:0px;
+            z-index:99;
+            width:100%;
+            height: 2px;
+            background: #999;
+            box-shadow: 2px 2px 6px #888;
+        }
+        /* Annotation { */
+        .annotation {
+            position: absolute;
+            width: auto;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 0;
+            overflow: hidden;
+            text-shadow: 2px 2px 6px rgba(51, 51, 51, 1);
+            background: #2b88c3;
+            padding: 4px 12px;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-box-shadow: 3px 3px 6px #888;
+            -webkit-box-shadow: 3px 3px 6px #888;
+            box-shadow: 3px 3px 6px #888;
+        }
+        .remoteFileQueue {
+            top: 180px;
+            left: 240px;
+        }
+
+        .archiveFileQueue {
+            top: 182px;
+            left: 400px;
+        }
+
+        .inputFiles {
+            top: 182px;
+            left: 696px;
+        }
+        /* } */
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="Jobs.htm"><span class="color-highlight">M</span>ax Analytics Admin 1.0</a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        <li class="active"><a href="Chart.htm">Chart</a></li>
+                        <li><a href="JobDescriptions.htm">Job Descriptions</a></li>
+                        <li><a href="Jobs.htm">Jobs</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="canvas" class="flowchart">
+                    <div id="tooltip"></div>
+                    <div id="bar-x">&nbsp;</div>
+                    <div id="bar-y">&nbsp;</div>
+                    <div id="annotation1" class="annotation remoteFileQueue">99</div>
+                    <div id="annotation2" class="annotation archiveFileQueue">999</div>
+                    <div id="annotation3" class="annotation inputFiles">111 </div>
+                    <div class="footer">
+                    </div>
+                </div>
+                <div id="canvasOption">
+                    <div style="float: left; font-weight: bold;">
+                        Theme:
+                        <br />
+                        <select id="selector-color">
+                            <option selected value="#fff;#2b88c3;">White font/Blue background</option>
+                            <option value="#000000;#ccc">Black font/Gray background</option>
+                            <option value="#ff0000;#333">Red font/Black background</option>
+                        </select>
+                    </div>
+                    <div id="interval" style="float: left; padding-left: 40px; margin-top: 10px; color:#333;">
+                        Refresh Rate
+                            <div id="interval-slider"></div>
+                        <div id="interval-slider-label" style="float: left; width: 100%;">
+                            <div class="slider-needle">1</div>
+                            <div class="slider-needle">2</div>
+                            <div class="slider-needle">3</div>
+                            <div class="slider-needle">4</div>
+                            <div class="slider-needle">5</div>
+                            <div class="slider-needle">6</div>
+                            <div class="slider-needle">7</div>
+                            <div class="slider-needle">8</div>
+                            <div class="slider-needle">9</div>
+                            <div class="slider-needle last">10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <hr />
+        <footer class="row">
+            <p>Design by <a href="#">Yours Truly</a> </p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="resource/jquery.js"></script>
+    <script src="resource/bootstrap-collapse.js"></script>
+    <!-- mobile nav -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="resource/canvas.js"></script>
+</body>
+</html>
