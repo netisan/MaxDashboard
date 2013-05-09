@@ -16,29 +16,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resource/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resource/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resource/apple-touch-icon-72-precomposed.png">
-	<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+  
+  <!-- Le javascript
+    ================================================== -->
+    <script src="resource/jquery.js"></script>
+    <script src="resource/bootstrap-collapse.js"></script> <!-- mobile nav -->
+ 		<script src="resource/site.js"></script>
   </head>
 
   <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="Jobs.htm"><span class="color-highlight">M</span>ax Analytics Admin 1.0</a>
-          <div class="nav-collapse">
-            <ul class="nav pull-right">
-            	<li><a href="Chart.htm">Chart</a></li>
-              <li><a href="JobDescriptions.htm">Job Descriptions</a></li>
-              <li class="active"><a href="Jobs.htm">Jobs</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+   <div class="include-nav" file="nav_snippet.htm" active="#navlink-jobs" ></div>
 	<div class="container">
 	
     <div class="row">
@@ -99,11 +87,7 @@
 			</p>
 		</footer>
     </div><!-- /container -->
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="resource/jquery.js"></script>
-    <script src="resource/bootstrap-collapse.js"></script> <!-- mobile nav -->
-
+    
+   
   </body>
 </html>
